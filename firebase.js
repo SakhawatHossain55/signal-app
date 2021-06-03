@@ -1,6 +1,6 @@
-import * as firebase from "firebase";
-import "firebase/firestore"
-import "firebase/auth"
+import firebase from "firebase";
+// import "firebase/firestore"
+// import "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyD7yIqEHd9gy1chnO_2KsLkcoV2yOYQ2vY",
@@ -11,14 +11,14 @@ const firebaseConfig = {
     appId: "1:545986080786:web:f42e6c30502bef4a7ce8cb"
   };
 
-//   let app;
-//   if (firebase.apps.length === 0) {
-//     app = firebase.initializeApp(firebaseConfig)
-//   } else {
-//       app = firebase.app();
-//   }
+  let app;
+  if (firebase.apps.length === 0) {
+    app = firebase.initializeApp(firebaseConfig)
+  } else {
+      app = firebase.app();
+  }
 
-//   const db = app.firebase();
-//   const auth = firebase.auth();
+  const db = app.firestore();
+  const auth = firebase.auth();
 
-//   export {db, auth};
+  export {db, auth};

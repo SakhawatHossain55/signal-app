@@ -9,7 +9,7 @@ const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -17,10 +17,16 @@ const RegisterScreen = ({ navigation }) => {
     })
   }, [navigation])
 
+
   const register = () => {
-    //   auth.createUserWithEmailAndPassword(email, password)
-    //   .then(authUser => {})
-    //   .then((error) => alert(error.message))
+      auth.createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+          authUser.user.updateProfile({
+              displayName: name,
+              photoURL: imageUrl || "https://i.ibb.co/tcrCy4j/Shakib.jpg",
+          })
+      })
+      .catch((error) => alert(error.message))
   };
 
   return (
@@ -55,8 +61,8 @@ const RegisterScreen = ({ navigation }) => {
         <Input
           placeholder="Profile Picture URL (optional)"
           type="text"
-          value={imageURL}
-          onChangeText={(text) => setImageURL(text)}
+          value={imageUrl}
+          onChangeText={(text) => setImageUrl(text)}
           onSubmitEditing={register}
         />
       </View>
