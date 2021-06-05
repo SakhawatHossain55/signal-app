@@ -3,22 +3,22 @@ import firebase from "firebase";
 // import "firebase/auth"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD7yIqEHd9gy1chnO_2KsLkcoV2yOYQ2vY",
-    authDomain: "signal-app-4d090.firebaseapp.com",
-    projectId: "signal-app-4d090",
-    storageBucket: "signal-app-4d090.appspot.com",
-    messagingSenderId: "545986080786",
-    appId: "1:545986080786:web:f42e6c30502bef4a7ce8cb"
-  };
+  apiKey: "AIzaSyBLM4lgIXywC9Wz3QBih8C8GqZKQ_MOK18",
+  authDomain: "inzamamul-portfolio.firebaseapp.com",
+  projectId: "inzamamul-portfolio",
+  storageBucket: "inzamamul-portfolio.appspot.com",
+  messagingSenderId: "59026800710",
+  appId: "1:59026800710:web:e7b7277f122d85f6cd8a47",
+};
 
-  let app;
-  if (firebase.apps.length === 0) {
-    app = firebase.initializeApp(firebaseConfig)
-  } else {
-      app = firebase.app();
-  }
+let app;
+if (firebase.apps.length === 0) {
+  app = firebase.initializeApp(firebaseConfig);
+} else {
+  app = firebase.app();
+}
 
-  const db = app.firestore();
-  const auth = firebase.auth();
+const db = app.firestore();
+const auth = firebase.auth();
 
-  export {db, auth};
+export { db, auth };
